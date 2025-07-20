@@ -1,10 +1,11 @@
 {
   "name": "pg-query-builder",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "test": "find ./test -name '*.ts' -print0 | xargs -0 -n 1 npx ts-node -r tsconfig-paths/register",
     "tscheck": "tsc --noEmit",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint src/**/*.ts test/**/*.ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -27,6 +28,10 @@
     "start": "node dist/QueryBuilderTestSuite.js"
   },
   "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "eslint": "^9.31.0",
     "tsconfig-paths": "^4.2.0"
   },
   "dependencies": {

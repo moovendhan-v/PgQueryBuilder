@@ -7,7 +7,6 @@
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "./dist",
-    "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -36,15 +35,12 @@
     }
   },
   "include": [
-    "src/**/*",
     "src/**/*.ts",
-    "src/**/*.json"
-, "test/QueryBuilder.factory.test.ts"  ],
+    "test/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "dist",
-    "**/*.test.ts",
-    "**/*.spec.ts",
     "coverage",
     "*.config.js",
     "*.config.ts"

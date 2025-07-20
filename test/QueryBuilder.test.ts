@@ -2,10 +2,8 @@ import {
     QueryBuilder,
     ResponseMapper,
     PaginationBuilder,
-    FilterOperations,
     DateFilterUtils,
     FieldMapping,
-    QueryOptions,
     PaginationResult
 } from '../src/QueryBuilder';
 
@@ -68,7 +66,7 @@ class QueryBuilderTestSuite {
 
     testBasicSelectQuery(): void {
         const builder = new QueryBuilder(SCHEMA, userFieldMappings, true);
-        const { selectQuery, countQuery } = builder.buildSelectQuery({
+        const { selectQuery } = builder.buildSelectQuery({
             tableName: 'users',
             fields: ['id', 'username', 'createdAt'],
             requiredFilters: { isActive: true },
@@ -208,7 +206,7 @@ class QueryBuilderTestSuite {
             });
             this.assert(false, 'Should throw error for invalid field');
         } catch (error) {
-            this.assert(true, 'Should throw error for invalid field');
+            this.assert(true, `Should throw error for invalid field ${error}`);
         }
         try {
             builder.buildSelectQuery({
@@ -220,7 +218,7 @@ class QueryBuilderTestSuite {
             });
             this.assert(false, 'Should throw error for computed sort field');
         } catch (error) {
-            this.assert(true, 'Should throw error for computed sort field');
+            this.assert(true, `Should throw error for computed sort field ${error}`);
         }
     }
 
