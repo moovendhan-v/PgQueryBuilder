@@ -20,7 +20,13 @@ export default [
         __dirname: 'readonly',
         module: 'readonly',
         require: 'readonly',
-        exports: 'readonly'
+        exports: 'readonly',
+        describe: 'readonly',
+        test: 'readonly',
+        expect: 'readonly',
+        it: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly'
       },
     },
     plugins: {
@@ -30,7 +36,6 @@ export default [
       ...tseslint.configs.recommended.rules,
       '@typescript-eslint/no-explicit-any': 'off',
       'no-case-declarations': 'off',
-      // Add custom rules here if needed
     },
   },
 ]; 
