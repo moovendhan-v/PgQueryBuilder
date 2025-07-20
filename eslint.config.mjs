@@ -6,7 +6,7 @@ export default [
   js.configs.recommended,
   {
     files: ['src/**/*.ts', 'test/**/*.ts'],
-    ignores: ['dist/', 'node_modules/', 'coverage/'],
+    ignores: ['node_modules/', 'coverage/', 'dist/'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
