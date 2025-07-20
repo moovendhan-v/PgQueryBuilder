@@ -1,11 +1,4 @@
-import {
-    QueryBuilder,
-    ResponseMapper,
-    PaginationBuilder,
-    DateFilterUtils,
-    FieldMapping,
-    PaginationResult
-} from '../src/QueryBuilder';
+import { QueryBuilder, FieldMapping, ResponseMapper, DateFilterUtils, PaginationBuilder, PaginationResult } from '../src/QueryBuilder/index';
 
 // Mock field mappings for users table
 const userFieldMappings: Record<string, FieldMapping> = {

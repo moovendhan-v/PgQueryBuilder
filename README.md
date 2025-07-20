@@ -65,6 +65,23 @@ To run all test files recursively:
 npm test
 ```
 
+### 3. Run cid locally
+
+To run all cicd locally before commiting to github:
+
+```
+act push -j build --container-architecture linux/amd64
+
+# Simulate push
+act push
+
+# Simulate PR
+act pull_request
+
+# Simulate a specific job
+act -j lint
+```
+
 ## Contribution
 
 1. Fork the repo and create your feature branch (`git checkout -b feature/my-feature`)

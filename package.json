@@ -1,7 +1,7 @@
 {
   "name": "pg-query-builder",
   "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "find ./test -name '*.ts' -print0 | xargs -0 -n 1 npx ts-node -r tsconfig-paths/register",
     "tscheck": "tsc --noEmit",
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.31.0",
+    "@types/node": "^24.0.15",
     "@typescript-eslint/eslint-plugin": "^8.37.0",
     "@typescript-eslint/parser": "^8.37.0",
     "eslint": "^9.31.0",
