@@ -1,5 +1,5 @@
 {
-  "name": "querybuilder",
+  "name": "pg-query-builder",
   "version": "1.0.0",
   "scripts": {
     "test": "find ./test -name '*.ts' -print0 | xargs -0 -n 1 npx ts-node -r tsconfig-paths/register",
