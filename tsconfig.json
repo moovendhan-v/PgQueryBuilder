@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "commonjs",
+    "module": "ESNext",
     "lib": ["ES2022", "DOM"],
     "declaration": true,
     "declarationMap": true,
@@ -47,7 +47,7 @@
   ],
   "ts-node": {
     "require": ["tsconfig-paths/register"],
-    "esm": false,
+    "esm": true,
     "experimentalSpecifierResolution": "node"
   }
 }
