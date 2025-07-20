@@ -1,0 +1,88 @@
+{
+  "name": "querybuilder",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "find ./test -name '*.ts' -print0 | xargs -0 -n 1 npx ts-node -r tsconfig-paths/register",
+    "tscheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "rm -rf dist",
+    "prepare": "npm run clean && npm run build",
+    "watch": "tsc --watch",
+    "dev": "ts-node --files QueryBuilderTestSuite.ts",
+    "test:watch": "tsc --noEmit --watch",
+    "test:debug": "node --inspect-brk -r ts-node/register QueryBuilderTestSuite.ts",
+    "test:debug:watch": "tsc --noEmit --watch && node --inspect-brk -r ts-node/register QueryBuilderTestSuite.ts",
+    "test:debug:coverage": "nyc --reporter=html --reporter=text-summary --require ts-node/register mocha --require ts-node/register QueryBuilderTestSuite.ts",
+    "test:debug:coverage:watch": "tsc --noEmit --watch && nyc --reporter=html --reporter=text-summary --require ts-node/register mocha --require ts-node/register QueryBuilderTestSuite.ts",
+    "test:coverage": "nyc --reporter=html --reporter=text-summary --require ts-node/register mocha --require ts-node/register QueryBuilderTestSuite.ts",
+    "test:coverage:watch": "tsc --noEmit --watch && nyc --reporter=html --reporter=text-summary --require ts-node/register mocha --require ts-node/register QueryBuilderTestSuite.ts",
+    "test:coverage:debug": "nyc --reporter=html --reporter=text-summary --require ts-node/register mocha --require ts-node/register --inspect-brk QueryBuilderTestSuite.ts",
+    "test:coverage:debug:watch": "tsc --noEmit --watch && nyc --reporter=html --reporter=text-summary --require ts-node/register mocha --require ts-node/register --inspect-brk QueryBuilderTestSuite.ts",
+    "test:coverage:debug:coverage": "nyc --reporter=html --reporter=text-summary --require ts-node/register mocha --require ts-node/register --inspect-brk QueryBuilderTestSuite.ts",
+    "test:coverage:debug:coverage:watch": "tsc --noEmit --watch && nyc --reporter=html --reporter=text-summary --require ts-node/register mocha --require ts-node/register --inspect-brk QueryBuilderTestSuite.ts",
+    "build": "tsc",
+    "start": "node dist/QueryBuilderTestSuite.js"
+  },
+  "devDependencies": {
+    "tsconfig-paths": "^4.2.0"
+  },
+  "dependencies": {
+    "pg": "^8.12.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./QueryBuilder": {
+      "import": "./dist/QueryBuilder/index.js",
+      "require": "./dist/QueryBuilder/index.js",
+      "types": "./dist/QueryBuilder/index.d.ts"
+    },
+    "./QueryBuilderFactory": {
+      "import": "./dist/QueryBuilderFactory/index.js",
+      "require": "./dist/QueryBuilderFactory/index.js",
+      "types": "./dist/QueryBuilderFactory/index.d.ts"
+    },
+    "./ResponseMapper": {
+      "import": "./dist/ResponseMapper/index.js",
+      "require": "./dist/ResponseMapper/index.js",
+      "types": "./dist/ResponseMapper/index.d.ts"
+    },
+    "./PaginationBuilder": {
+      "import": "./dist/PaginationBuilder/index.js",
+      "require": "./dist/PaginationBuilder/index.js",
+      "types": "./dist/PaginationBuilder/index.d.ts"
+    },
+    "./FilterOperations": {
+      "import": "./dist/FilterOperations/index.js",
+      "require": "./dist/FilterOperations/index.js",
+      "types": "./dist/FilterOperations/index.d.ts"
+    },
+    "./DateFilterUtils": {
+      "import": "./dist/DateFilterUtils/index.js",
+      "require": "./dist/DateFilterUtils/index.js",
+      "types": "./dist/DateFilterUtils/index.d.ts"
+    },
+    "./FieldMapping": {
+      "import": "./dist/FieldMapping/index.js",
+      "require": "./dist/FieldMapping/index.js",
+      "types": "./dist/FieldMapping/index.d.ts"
+    },
+    "./QueryOptions": {
+      "import": "./dist/QueryOptions/index.js",
+      "require": "./dist/QueryOptions/index.js",
+      "types": "./dist/QueryOptions/index.d.ts"
+    },
+    "./PaginationResult": {
+      "import": "./dist/PaginationResult/index.js",
+      "require": "./dist/PaginationResult/index.js",
+      "types": "./dist/PaginationResult/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  }
+}
